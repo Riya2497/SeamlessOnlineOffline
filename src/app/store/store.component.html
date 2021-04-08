@@ -1,0 +1,35 @@
+<h1>Order History</h1>
+<div class="container">
+    <div *ngFor="let ord of orderList">
+        <div class="row">
+            <div *ngIf="ord.oQRcode.length>1 && cid!=ord.oId" class="col-md-3 mt-3">
+              <qr-code [value]="ord.oQRcode" size="130"></qr-code>
+              <label for="{{ord.oId}}">
+                Enter Code:
+                <input [(ngModel)]="ord.eCode" id="{{ord.oId}}" name="{{ord.oId}}">
+             </label>
+                <button (click)="validateCode(ord)">Validate</button>
+            </div>
+            <div *ngIf="ord.oQRcode.length==0" class="col-md-3 mt-3">
+              <h1 style="color:red">Order Cancelled</h1>
+            </div>
+            <div *ngIf="ord.oQRcode.length==1 || (completed && cid==ord.oId)" class="col-md-3 mt-3">
+                <h1 style="color:green">Order Completed</h1>
+            </div>
+            <div class="col-md-9">
+              <div class="floatR">
+                <p><b>Order Id:</b> {{ord.oId}}</p>
+                
+                <p *ngIf="ord.oQRcode.length!=1 && cid!=ord.oId">
+                  <b>Order Status:</b> {{ord.oStatus}}</p>
+                <p *ngIf="ord.oQRcode.length==1 || (completed && cid==ord.oId)">
+                  <b>Order Status:</b> Completed
+                </p>
+                <p><b>Seller Id:</b> {{ord.oSid}}</p>
+                <p><b>Order Price:</b> {{ord.oPrice}}</p>
+              </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+</div>

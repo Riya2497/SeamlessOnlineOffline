@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container">
+  <h1>Product Details</h1>
+  <div class="row">
+    <div class="col-md-6">
+        <img src="{{data?.pImage}}" class="card">
+  </div>
+    <div class="col-md-6 hw">
+      <div class="mt-4">
+        <h2>Product Id: {{data?._id}}</h2>
+        <h2>Product Name: {{data?.pName}}</h2>
+        <br>
+        <label for="pq">Quantity</label>
+        <input  type="text" id="pq" name="pq" [(ngModel)]="pQuant">
+        <h4>Price: <i class="fa fa-rupee">{{data?.pPrice}}</i></h4>
+        <!-- <p><b>Quantity left:</b>{{data?.pSeller.pQuantity}}</p> -->
+        <button class="button" (click)="addCart(data)">Add to Cart</button>&ensp;
+        <button class="button"  style="background-color:rgb(5, 168, 218)" (click)="goBack()">Go Back</button>
+        <p *ngIf="successMsg">{{successMsg}}</p>
+    </div>
+    </div>
+  </div>
+</div>

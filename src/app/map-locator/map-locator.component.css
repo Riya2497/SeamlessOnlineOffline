@@ -1,0 +1,29 @@
+agm-map{
+    height: 500px
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    margin-right: 10px;
+  }
+  
+  .button:hover {background-color: #3e8e41}
+  
+  .button:active {
+    background-color: #3e8e41;
+    transform: translateY(4px);
+  }
+
+  input[type=checkbox], input[type=radio]{
+    height: 25px;
+    width: 25px;
+  }

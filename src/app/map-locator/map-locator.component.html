@@ -1,0 +1,50 @@
+<h1><u>Select Store</u></h1>
+<h3>Please Select the product to get Shop location</h3>
+<div *ngFor="let c of cart">
+  <label class="radio-inline" for="{{c.p_Id}}">
+  <input type="radio" id="{{c.p_Id}}" name="products" (change)="handleChange(c)"/><b>{{c.p_Id}}
+  </b></label>&nbsp;&nbsp;
+</div>
+<br>
+<br>
+<div >
+    <agm-map  [zoom]="zoom" [latitude]="lat" [longitude]="lng">
+      <agm-marker 
+      [latitude]="a.sGeopoint._lat"
+       [longitude]="a.sGeopoint._long" *ngFor="let a of data"
+       (markerClick)="markerClick(infoWindow, a)">
+       <agm-info-window #infoWindow>
+        <strong>{{a.sName}}</strong>
+        <br>
+        <i>{{a.sAddress[0]}}, {{a.sAddress[1]}}</i>
+        <br><br>
+        <button class="button" (click)="addStore(a)" style="background-color:rgb(218, 5, 122)">Select Store</button>
+        <p>{{successMsg}}</p>
+      </agm-info-window>
+      </agm-marker>
+    </agm-map>
+    <br>
+    <br>
+    <div>
+      <h2>Payment</h2>
+      <form>
+        <label class="radio-inline" for="online">
+        <input type="radio" id="online" name="payment" (change)="paymnt(true)"/>
+        <b>Online Pament</b></label> &nbsp;
+        <label class="radio-inline" for="cod">
+        <input type="radio" id="cod" name="payment" (change)="paymnt(false)"/>
+        <b>COD</b></label>
+      </form>
+    </div>
+    <div>
+      <button class="button" (click)="checkout()">Checkout</button>
+      <button class="button" (click)="clearcart()" style="background-color:rgb(5, 168, 218)" >Clear Cart</button>
+      <div *ngFor="let a of storesSelected">
+        <span><b>Product Id: </b>{{a.selectedId}}</span>&nbsp;
+        <span><b>Shop Id: </b>{{a.sId}}</span>
+        <br>
+      </div>
+    </div>
+    <br>
+    <br>
+</div>

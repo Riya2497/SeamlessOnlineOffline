@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "preetytuff": {
+      "hosting": {
+        "preetyTuff": [
+          "preetytuff"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "preetytuff"
+  }
+}

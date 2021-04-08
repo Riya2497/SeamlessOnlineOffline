@@ -1,0 +1,29 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<h1>Displaying products</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div *ngFor="let d of data" class="col-md-3">
+      <div style="cursor: pointer;" (click)="nav(d._id)">
+        <div>
+          <img class="img" src="{{d.pImage}}">
+        </div>
+        <div class="center">
+          <b>{{d.pName}}</b><br>
+          <b>Rs. {{d.pPrice}}</b>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+
+
+
+    
+
+
+

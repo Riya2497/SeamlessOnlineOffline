@@ -1,0 +1,26 @@
+<h1><u>Order Details</u></h1>
+
+<div class="container">
+  <div *ngFor="let ord of orderLists">
+      <div class="row">
+          <div *ngIf="ord.oQRcode.length>1" class="col-md-3 mt-3">
+            <qr-code [value]="ord.oQRcode" size="130"></qr-code>
+          </div>
+          <div *ngIf="ord.oQRcode.length==0" class="col-md-3 mt-3">
+            <h1 style="color:red">Order Cancelled</h1>
+          </div>
+          <div *ngIf="ord.oQRcode.length==1" class="col-md-3 mt-3">
+            <h1 style="color:green">Order Completed</h1>
+          </div>
+          <div class="col-md-9">
+            <div class="floatR">
+              <p><b>Order Id:</b> {{ord.oId}}</p>
+              <p><b>Order Status:</b> {{ord.oStatus}}</p>
+              <p><b>Seller Id:</b> {{ord.oSid}}</p>
+              <p><b>Order Price:</b> {{ord.oPrice}}</p>
+              <p><b>Shop Address: </b> {{ord.sAddress[0]}}<br> {{ord.sAddress[1]}},{{ord.sAddress[2]}}</p>
+            </div>
+          </div>
+      </div>
+      <hr>
+  </div>
