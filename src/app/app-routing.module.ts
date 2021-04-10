@@ -9,13 +9,15 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { StoreComponent } from './store/store.component';
 
 const routes: Routes = [
+  
   {path:"login",component:LoginComponent},
   {path:"placed",component:PlaceOrderComponent},
   {path:"product-list",component:ProductListComponent},
   {path:"productDetail/:Id",component:ProductDetailsComponent},
   {path:"cart",component:CartComponent},
   {path:"store",component:StoreComponent},
-  {path:"map-locator",component:MapLocatorComponent}
+  {path:"map-locator",component:MapLocatorComponent},
+  { path: '', redirectTo: '/login', pathMatch:'prefix' }
 ];
 
 @NgModule({

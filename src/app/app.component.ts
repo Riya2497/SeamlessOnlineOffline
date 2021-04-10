@@ -28,7 +28,7 @@ export class AppComponent {
     this.email=sessionStorage.getItem("uEmail");
     this.check=sessionStorage.getItem("uCustomer")
     this.cLen=JSON.parse(sessionStorage.getItem("uCart")||'{}').length
-    console.log(this.email)
+    
   }
   // todo = this.store.collection('shop').valueChanges({ merchId: 'mId' }).subscribe(res=>{
   //   console.log(res);

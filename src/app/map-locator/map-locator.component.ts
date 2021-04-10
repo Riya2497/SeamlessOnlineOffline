@@ -17,7 +17,7 @@ export class MapLocatorComponent implements OnInit {
   lat:any= 22.280140
   lng:any= 73.158770
   cart: any
-  zoom:any=8
+  zoom:any=12
   cDate:any
   ordersPlaced: Order[] = []
   uuidValue!: string;
